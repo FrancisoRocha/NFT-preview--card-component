@@ -1,0 +1,131 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.card {
+    width: 35rem;
+    height: 62rem;
+    background-color: v.$ColorCard;
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+
+    .imagen{
+        position: relative;
+        display: inline-block;
+        .nft {
+            width: 30.2rem;
+            height: 30.2rem;
+            margin: 2.4rem 2.4rem 0 2.4rem;
+            position: relative;
+            z-index: 1;
+        }
+        &::before{
+            width: 30.2rem;
+            height: 30.2rem;
+            margin: 2.4rem 2.4rem 0 2.4rem;
+            border-radius: .8rem;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: v.$Hover;
+            opacity: 0;
+            transition:  opacity 0.3s ease-in-out;
+            z-index: 2;
+            cursor: pointer;
+        }
+        .icon { // Clase para el ícono
+            position: absolute;
+            top: 50%; // Centra verticalmente
+            left: 50%; // Centra horizontalmente
+            transform: translate(-50%, -50%); // Ajusta la posición del ícono
+            width: 44px; // Ajusta el tamaño del ícono
+            height: 33px; // Ajusta el tamaño del ícono
+            z-index: 3; // Asegúrate de que esté por encima del fondo
+            background-image: url('../img/icon-view.svg');
+            background-position: center;
+            background-blend-mode: normal;
+            background-repeat: no-repeat;// Evita que la imagen se repita
+            opacity: 0; // Inicialmente oculto
+            transition: opacity 0.3s ease-in-out; // Transición para el icono
+        }
+        &:hover::before {
+            opacity: 0.6;
+        }
+        &:hover .icon {
+            opacity: 1; // El icono se hace visible al hacer hover
+        }
+    }
+
+    .titulo {
+        font-size: 2.2rem;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 2.4rem;
+        cursor: pointer;
+        &:hover{
+            color: v.$Hover;
+        }
+    }
+
+    .texto {
+        font-weight: 300;
+        font-size: 1.8rem;
+        line-height: 26px;
+        margin-left: 2.4rem;
+    }
+
+    .one {
+        display: flex;
+        align-items: center;
+        margin-left: 2.4rem;
+        gap: .7rem;
+
+        .eterum-text,
+        .reloj-texto{
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .reloj {
+            margin-left: 13rem;
+        }
+    }
+
+    .barra {
+        width: 30rem;
+        height: .1rem;
+        background-color: #2E405A;
+        margin-top: 2rem;
+        margin-left: 2.4rem;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+        margin-left: 2.4rem;
+
+        .avatar {
+            width: 3.3rem;
+            height: 3.3rem;
+            border-radius: 50%;
+            border: 1px solid v.$ColorTitulo;
+        }
+
+        .textoImg {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-left: 2rem;
+            cursor: pointer;
+        }
+        .span{
+            &:hover{
+                color: v.$Hover;
+            }
+        }
+    }
+}

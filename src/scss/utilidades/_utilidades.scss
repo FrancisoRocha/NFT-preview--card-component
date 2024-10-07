@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+
+.color-white{
+    color: v.$ColorTitulo;
+}
+
+.br-radius{
+    border-radius: 1.5rem;
+}
+
+.br-radius-img{
+    border-radius: .8rem;
+}
+
+.colorParrafo{
+    color: v.$ColorTexto;
+}
+
+.eterum-text{
+    color: v.$Hover;
+}
